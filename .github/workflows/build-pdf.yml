@@ -34,9 +34,9 @@ jobs:
           pandoc resume/main/resume.md \
             -f markdown \
             -t pdf \
-            -V geometry:margin=0.75in \
-            -V fontsize=11pt \
+            --template=.github/templates/harvard-resume.tex \
             -V colorlinks=true \
+            -V linkcolor=blue \
             --pdf-engine=pdflatex \
             -o build/Lyriq-Davis-Automation-Resume.pdf
       
