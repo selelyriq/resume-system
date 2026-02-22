@@ -2,6 +2,13 @@
 **Cloud Infrastructure & AI Systems Engineer**
 
 ---
+## Summary
+Cloud Engineer with 5+ years of experience specializing in DevOps, Infrastructure as Code (Terraform), and
+multicloud environments (AWS, Azure). Proven expertise in leading large-scale migrations, implementing robust
+CI/CD and GitOps workflows (GitHub Actions, ArgoCD), managing Kubernetes/containerized services, and restoring
+mission-critical application access through comprehensive identity-chain diagnosis. Highly proficient in automating
+infrastructure, reducing deployment times, and standardizing developer platforms for increased efficiency.
+---
 
 ## Education
 
@@ -36,14 +43,16 @@ Terraform, AWS (EC2, S3, IAM, SSM, CloudWatch, ECS, EKS, Bedrock), Azure (VNet, 
 ### University of Cincinnati
 **Cloud Engineer** | January 2025 - August 2025 | Cincinnati, OH
 
-- Designed and implemented Python-based automation (boto3, REST APIs) to orchestrate serverless workflows across AWS (Lambda, S3, SQS, Textract, Bedrock, API Gateway) for automated Teams transcript ingestion and AI-driven summarization.
-- Built reusable, idempotent Terraform modules to standardize AWS and Azure infrastructure (networking, compute, IAM, observability), integrating plan/apply validation gates within GitHub-based CI/CD workflows.
-- Implemented GitHub Actions and ArgoCD GitOps pipelines with branching strategies, pull-request reviews, automated chart validation, and container scanning to ensure safe, versioned infrastructure and application changes.
-- Architected Terraform state isolation strategy by separating infrastructure into logically scoped state files and repositories (networking, shared services, application stacks) segmented by account and environment, minimizing blast radius and enabling safer, auditable change workflows.
-- Automated multicloud image builds using Packer + GitHub Actions, producing hardened golden AMIs and Azure images aligned to enterprise security standards.
-- Deployed observability tooling (Prometheus, Grafana, Alloy, CloudWatch dashboards) implementing structured logging, metrics, and alerting for infrastructure and automation workflows.
-- Partnered with security leadership to assess and remediate Security Hub findings, removing public S3 exposure, enforcing least-privilege IAM, and restricting open security groups, improving cloud security posture.
-- Authored runbooks, rollback procedures, and technical documentation to ensure repeatable, auditable infrastructure changes aligned with enterprise governance controls.
+- Built and maintained Kubernetes environments across Azure and AWS, developing Helm charts to deploy
+microservices and internal AI/ML workloads with consistency and reproducibility.
+- Implemented GitOps workflows using ArgoCD and GitHub Actions, enabling declarative deployments,
+automated chart validation, container scanning, and reliable promotion pipelines.
+- Deployed observability tooling (Prometheus, Grafana, Alloy) and Terraform-driven CloudWatch dashboards
+to unify metrics, logs, and alerting across EC2, AKS, and containerized services.
+- Supported data engineering initiatives by integrating Snowflake and Informatica pipelines with AWS
+workloads, improving pipeline reliability and enabling secure cloud-native analytics.
+- Automated multicloud image builds using Packer + GitHub Actions and provisioned enterprise-grade RHEL
+systems through Red Hat Hybrid Cloud Console to streamline environment setup.
 
 ### Tartan Builders
 **Cloud Engineer** | October 2022 - December 2024 | Dublin, OH
