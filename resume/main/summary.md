@@ -1,8 +1,8 @@
 ---
-positioning: security
-branch: security-enterprise
+positioning: ai-infra
+branch: ai-infra
 ---
 
 # Summary
 
-Cloud Security & Enterprise Infrastructure Engineer with 5+ years designing guardrails that reduce cloud misconfiguration and limit incident impact. Expertise in IAM boundaries, least-privilege enforcement, network isolation, and identity chain architecture. Proven ability to secure large-scale infrastructure from $80M/day mission-critical systems to enterprise migrations with a focus on preventing entire classes of security mistakes through thoughtful architecture.
+Cloud & AI Infrastructure Engineer with 5+ years building systems that support production AI and ML workloads. Expertise in LLM orchestration, cost-aware inference, serverless ML pipelines, and scalable data systems. Proven ability to design infrastructure that makes AI systems safer, faster, and more economical from research through production deployment.
