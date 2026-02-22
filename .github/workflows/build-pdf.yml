@@ -32,7 +32,7 @@ jobs:
             -V geometry:margin=0.75in \
             -V fontsize=11pt \
             -V colorlinks=true \
-            --pdf-engine=xelatex \
+            --pdf-engine=pdflatex \
             -o build/resume.pdf
       
       - name: Verify PDF created
