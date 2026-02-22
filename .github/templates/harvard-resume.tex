@@ -1,0 +1,62 @@
+\documentclass[10pt,letterpaper]{article}
+
+% Fonts and encoding
+\usepackage[utf-8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Geometry - Harvard style uses 0.5in margins
+\usepackage[margin=0.5in]{geometry}
+
+% Colors
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.3}
+
+% Typography
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% No page numbers
+\pagestyle{empty}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Section formatting - compact and professional
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+\titleformat{\section}
+  {\normalfont\bfseries\large\color{darkblue}}
+  {}
+  {0pt}
+  {}
+  [\vspace{-8pt}\hrule\vspace{3pt}]
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}
+  {}
+  {0pt}
+  {}
+
+% List formatting - compact
+\setlist[itemize]{
+  leftmargin=15pt,
+  itemsep=1pt,
+  parsep=0pt,
+  topsep=2pt,
+  partopsep=0pt
+}
+
+% Adjust line spacing
+\renewcommand{\baselinestretch}{0.95}
+
+% Bold and italic formatting
+\usepackage[normalem]{ulem}
+
+\begin{document}
+
+$body$
+
+\end{document}

@@ -26,7 +26,7 @@ jobs:
       - name: Install Pandoc
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y pandoc texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra cm-super dvipng
       
       - name: Build PDF from Markdown
         run: |
@@ -34,9 +34,9 @@ jobs:
           pandoc resume/main/resume.md \
             -f markdown \
             -t pdf \
-            -V geometry:margin=0.75in \
-            -V fontsize=11pt \
+            --template=.github/templates/harvard-resume.tex \
             -V colorlinks=true \
+            -V linkcolor=blue \
             --pdf-engine=pdflatex \
             -o build/AI-Infrastructure-Resume.pdf
       
