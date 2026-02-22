@@ -64,4 +64,13 @@ jobs:
           cp build/Lyriq-Davis-Automation-Resume.pdf Lyriq-Davis-Security-Resume.pdf
           git add -f Lyriq-Davis-Security-Resume.pdf
           git commit -m "chore: update resume PDF" || echo "No changes to commit"
-          git push
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update resume PDF"
+          title: "Update Resume PDF"
+          body: "Automated PDF generation from resume markdown"
+          branch: resume-pdf-update-${{ github.ref_name }}
+          delete-branch: true
