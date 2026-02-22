@@ -1,0 +1,23 @@
+# Build outputs
+*.pdf
+*.docx
+*.html
+
+# Temporary files
+*.tmp
+.DS_Store
+*~
+.swp
+.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Build artifacts
+/dist/
+/build/
+
+# OS
+Thumbs.db

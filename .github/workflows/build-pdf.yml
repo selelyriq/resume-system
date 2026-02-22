@@ -1,0 +1,53 @@
+name: Build PDF Resume
+
+on:
+  push:
+    paths:
+      - 'resume/**/*.md'
+      - '.github/workflows/build-pdf.yml'
+    branches:
+      - main
+      - automation-devops
+      - security-enterprise
+      - ai-infra
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended
+      
+      - name: Build PDF from Markdown
+        run: |
+          mkdir -p build
+          pandoc resume/main/resume.md \
+            -f markdown \
+            -t pdf \
+            -V geometry:margin=0.75in \
+            -V fontsize=11pt \
+            -V colorlinks=true \
+            --pdf-engine=xelatex \
+            -o build/resume.pdf
+      
+      - name: Verify PDF created
+        run: |
+          if [ -f build/resume.pdf ]; then
+            echo "PDF successfully created"
+            ls -lh build/resume.pdf
+          else
+            echo "PDF creation failed"
+            exit 1
+          fi
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: resume-pdf
+          path: build/resume.pdf
+          retention-days: 30
