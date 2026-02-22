@@ -1,8 +1,8 @@
 ---
-positioning: platform
-branch: main
+positioning: automation
+branch: automation-devops
 ---
 
 # Summary
 
-Cloud Infrastructure & AI Systems Engineer with 5+ years designing scalable infrastructure systems that reduce operational and organizational risk. Expertise in Terraform architecture, multi-account strategies, GitOps, and observability standards. Proven ability to lead high-stakes infrastructure projects—from $80M/day cloud migrations to standardized developer platforms serving 150+ engineers.
+Cloud Infrastructure & Automation Engineer with 5+ years eliminating operational friction through CI/CD pipelines, GitOps workflows, and event-driven automation. Expertise in GitHub Actions, ArgoCD, serverless orchestration, and infrastructure-as-code automation. Demonstrated ability to scale deployment velocity and reliability across teams—from 3x deployment speed improvement to 60% failure rate reduction through automated, deterministic infrastructure changes.
