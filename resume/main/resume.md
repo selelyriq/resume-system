@@ -1,8 +1,8 @@
-# Lyriq Davis
-### (419)984-4884 | lyriqsele@gmail.com
-**Cloud Infrastructure & AI Systems Engineer**
-
 ---
+name: Lyriq Davis
+contact: (419) 984-4884 | lyriqsele@gmail.com
+---
+
 ## Summary
 Cloud Engineer with 5+ years of experience specializing in DevOps, Infrastructure as Code (Terraform), and
 multicloud environments (AWS, Azure). Proven expertise in leading large-scale migrations, implementing robust
