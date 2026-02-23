@@ -1,0 +1,79 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Fonts and encoding
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Geometry - Harvard style uses tight margins
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+
+% Colors and links
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+% Typography
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% No page numbers
+\pagestyle{empty}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Disable section numbering (removes 0.3.1, 0.3.2, etc.)
+\setcounter{secnumdepth}{0}
+
+% Section formatting - centered Harvard style with underline
+\titleformat{\section}
+  {\normalfont\bfseries\large\filcenter}
+  {}
+  {0pt}
+  {}
+  [\vspace{-6pt}{\centering\color{black}\titlerule[0.4pt]}\vspace{2pt}]
+
+% Subsection formatting - left-aligned, no numbering
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{2pt}
+
+% List formatting - compact bullets
+\setlist[itemize]{
+  leftmargin=1.5em,
+  itemsep=2pt,
+  parsep=0pt,
+  topsep=3pt,
+  partopsep=0pt
+}
+
+% Pandoc tightlist command for compact lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+% Name and contact - centered Harvard style
+$if(name)$
+\begin{center}
+  {\LARGE \textbf{$name$}} \\[4pt]
+  $if(contact)$
+  $contact$
+  $endif$
+\end{center}
+\vspace{8pt}
+$endif$
+
+$body$
+
+\end{document}

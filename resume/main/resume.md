@@ -1,6 +1,6 @@
-# Lyriq Davis
-**Cloud Infrastructure & AI Systems Engineer**
-
+---
+name: Lyriq Davis
+contact: (419) 984-4884 | lyriqsele@gmail.com
 ---
 
 ## Education
