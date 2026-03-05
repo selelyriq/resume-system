@@ -35,9 +35,14 @@ SECTION HEADERS:
 - Define \\section* with titlesec to be centered bold with a rule below
 
 EXPERIENCE ENTRY LAYOUT (use this exact pattern for every job):
+\\vspace{12pt}
+\\needspace{6\\baselineskip}
 \\noindent{\\textbf{Company Name}}\\hfill{Dates}\\\\
 {\\textit{Job Title}}\\hfill{Location}\\\\[2pt]
 \\begin{itemize}...\\end{itemize}
+
+The \\vspace{12pt} MUST appear before every company name, including the first one in a section.
+This creates two clear lines of breathing room between the bullet list above and the next company name.
 
 EDUCATION ENTRY LAYOUT (each cert on its own line):
 \\noindent{\\textbf{Certification Name}}\\hfill{Date}\\\\
@@ -50,8 +55,9 @@ BULLETS:
 - itemsep=2pt, parsep=0pt, topsep=3pt, leftmargin=1.5em
 
 PAGE BREAK RULES:
-- Use \\needspace{6\\baselineskip} immediately before each job entry header
-- This prevents orphaned company names at the bottom of a page
+- The \\needspace{6\\baselineskip} before each job entry prevents orphaned company names
+- Section headers (\\section*) must also have extra space before them when following a bullet list
+- Add \\vspace{12pt} before every \\section* call so sections never feel glued to the content above
 
 HORIZONTAL RULES between sections:
 - The rule comes from the section header formatting, not from \\hrule or --- in markdown
