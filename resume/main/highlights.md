@@ -25,4 +25,3 @@ branch: main
 - **AI Systems**: LLM orchestration, cost-aware design, explainable ranking pipelines, MCP integrations
 - **Security & Compliance**: IAM design, least-privilege enforcement, TLS lifecycle management, Security Hub remediation
 - **Languages**: Python (boto3, automation scripts), SQL, PySpark, Bash
-

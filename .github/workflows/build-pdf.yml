@@ -72,3 +72,5 @@ jobs:
           git add -f AI-Infrastructure-Resume.pdf
           git commit -m "chore: update resume PDF" || echo "No changes to commit"
           git push
+
+# run boi run
