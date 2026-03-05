@@ -3,6 +3,13 @@ import os
 import sys
 import anthropic
 
+# Load .env file if present (local development)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 STYLE_INSTRUCTIONS = """
 You are a LaTeX expert. Convert the resume markdown below into a complete, compilable LaTeX document.
 
@@ -54,7 +61,7 @@ Return ONLY the raw LaTeX source. No explanation. No markdown code fences. No tr
 """
 
 def main():
-    api_key = os.environ.get("ye")
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ERROR: ANTHROPIC_API_KEY environment variable not set", file=sys.stderr)
         sys.exit(1)
