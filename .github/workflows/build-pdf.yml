@@ -72,15 +72,3 @@ jobs:
           name: ${{ env.PDF_NAME }}
           path: build/resume.pdf
           retention-days: 30
-
-      - name: Commit and push PDF to branch
-        run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          git rm -f AI-Infrastructure-Resume.pdf 2>/dev/null || true
-          cp build/resume.pdf "$PDF_NAME"
-          git add -f "$PDF_NAME"
-          git commit -m "chore: update resume PDF" || echo "No changes to commit"
-          git push
-
-# run boi run
