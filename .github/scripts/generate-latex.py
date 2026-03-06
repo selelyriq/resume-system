@@ -28,22 +28,6 @@ FONT SIZES:
 - Job titles: \\normalsize\\itshape
 - Bullet text: \\normalsize (11pt)
 
-SECTION HEADERS:
-- Each section header is bold, centered, with a full-width rule immediately below it
-- Use this pattern for every section:
-  \\section*{Section Name}
-- Define \\section* with titlesec to be centered bold with a rule below
-
-EXPERIENCE ENTRY LAYOUT (use this exact pattern for every job):
-\\vspace{12pt}
-\\needspace{6\\baselineskip}
-\\noindent{\\textbf{Company Name}}\\hfill{Dates}\\\\
-{\\textit{Job Title}}\\hfill{Location}\\\\[2pt]
-\\begin{itemize}...\\end{itemize}
-
-The \\vspace{12pt} MUST appear before every company name, including the first one in a section.
-This creates two clear lines of breathing room between the bullet list above and the next company name.
-
 EDUCATION ENTRY LAYOUT (each cert on its own line):
 \\noindent{\\textbf{Certification Name}}\\hfill{Date}\\\\
 
@@ -54,10 +38,36 @@ BULLETS:
 - Use \\textbullet as the bullet marker
 - itemsep=2pt, parsep=0pt, topsep=3pt, leftmargin=1.5em
 
+SECTION HEADERS:
+- Each section header is bold, centered, with a full-width rule immediately below it
+- Use this pattern for every section:
+  \\section*{Section Name}
+- Define \\section* with titlesec to be centered bold with a rule below
+
+EXPERIENCE ENTRY LAYOUT (use this exact pattern for every job):
+\\vspace{12pt}
+\\needspace{8\\baselineskip}
+\\noindent{\\textbf{Company Name}}\\hfill{Dates}\\\\
+{\\textit{Job Title}}\\hfill{Location}\\\\
+\\begin{itemize}...\\end{itemize}
+\\goodbreak
+
+CRITICAL SPACING RULES:
+- The \\vspace{12pt} creates breathing room ABOVE the company name (between jobs). Good.
+- After the Location line use \\\\ with NO extra points — just a plain line break, no \\\\[Xpt].
+- The itemize topsep must be 0pt so the first bullet sits tight under the job title line.
+- After \\end{itemize} place \\goodbreak — this signals to LaTeX that breaking the page HERE
+  (between jobs) is preferred over breaking mid-job. This is how we minimize mid-block breaks.
+
+BULLETS:
+- Use \\textbullet as the bullet marker
+- itemsep=2pt, parsep=0pt, topsep=0pt, partopsep=0pt, leftmargin=1.5em
+
 PAGE BREAK RULES:
-- The \\needspace{6\\baselineskip} before each job entry prevents orphaned company names
-- Section headers (\\section*) must also have extra space before them when following a bullet list
-- Add \\vspace{12pt} before every \\section* call so sections never feel glued to the content above
+- \\needspace{8\\baselineskip} before each job entry keeps company name + title + first 2 bullets together.
+- Before every \\section* use \\needspace{10\\baselineskip} so the section header never lands
+  at the bottom of a page without at least some of its content following it.
+- \\goodbreak after every \\end{itemize} encourages breaks between jobs, not inside them.
 
 HORIZONTAL RULES between sections:
 - The rule comes from the section header formatting, not from \\hrule or --- in markdown
