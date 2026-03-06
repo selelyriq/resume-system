@@ -64,7 +64,11 @@ BULLETS:
 - itemsep=2pt, parsep=0pt, topsep=0pt, partopsep=0pt, leftmargin=1.5em
 
 PAGE BREAK RULES:
-- \\needspace{8\\baselineskip} before each job entry keeps company name + title + first 2 bullets together.
+- Count the bullets in each job entry before writing the LaTeX.
+- If a job entry has MORE THAN 5 bullets, it cannot fit on one page. For these long entries,
+  use \\pagebreak before the \\vspace{18pt} so the entry always starts at the TOP of a fresh page.
+  This prevents the worst case: company name + a few bullets at bottom of page, rest on next page.
+- If a job entry has 5 or fewer bullets, use \\needspace{8\\baselineskip} (no forced pagebreak).
 - Before every \\section* use \\needspace{10\\baselineskip} so the section header never lands
   at the bottom of a page without at least some of its content following it.
 - \\goodbreak after every \\end{itemize} encourages breaks between jobs, not inside them.
