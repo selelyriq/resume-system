@@ -4,7 +4,7 @@ contact: (419) 984-4884 | lyriqsele@gmail.com
 ---
 
 ## Summary
-Cloud Engineer with 5+ years of experience designing scalable infrastructure platforms that reduce operational and organizational risk. Deep expertise in Terraform architecture, multi-account IaC design, GitOps workflows, and internal developer tooling. Focused on building reusable, composable infrastructure systems and standardized developer platforms that scale safely — from blast radius isolation to zero-friction onboarding.
+Cloud Engineer with 5+ years of experience specializing in Terraform-driven infrastructure automation and CI/CD pipeline engineering on AWS. Deep hands-on expertise in building modular, reusable IaC foundations, GitOps workflows, and cloud-native automation at enterprise scale, with expanding depth in AI-integrated platform engineering. Focused on eliminating manual ops through repeatable, auditable infrastructure delivery.
 
 ---
 
@@ -19,10 +19,10 @@ Cloud Engineer with 5+ years of experience designing scalable infrastructure pla
 ## Core Competencies & Skills
 
 **Technical:**
-Platform Engineering, Infrastructure as Code, Developer Experience, Cloud Architecture, Kubernetes, CI/CD, Observability, Automation, Security & Compliance
+Platform Engineering, Infrastructure as Code, Cloud Architecture, CI/CD, Observability, Automation, Kubernetes, AI Systems Engineering, Security & Compliance, Developer Experience
 
 **Technology Tools & Platforms:**
-Terraform, AWS (EC2, S3, IAM, SSM, CloudWatch, ECS, EKS, Bedrock), Azure (VNet, AKS, Private DNS, Private Link), Docker, Kubernetes, Helm, ArgoCD, GitHub Actions, Packer, Prometheus, Grafana, Python, SQL, Databricks, MCP
+Terraform, AWS (EC2, S3, IAM, SSM, CloudWatch, ECS, EKS, Bedrock, SageMaker, Lambda, Transcribe), Azure (VNet, AKS, Private DNS, Private Link), Docker, Kubernetes, Helm, ArgoCD, GitHub Actions, Packer, Prometheus, Grafana, Python, SQL, Databricks, OpenAI SDK, MCP, Streamlit
 
 ---
 
@@ -40,11 +40,12 @@ Terraform, AWS (EC2, S3, IAM, SSM, CloudWatch, ECS, EKS, Bedrock), Azure (VNet, 
 ### University of Cincinnati
 **Cloud Engineer** | January 2025 - August 2025 | Cincinnati, OH
 
-- Architected Terraform state isolation strategy by separating infrastructure into logically scoped state files and repositories (networking, shared services, application stacks) segmented by account and environment, minimizing blast radius and enabling safer, auditable change workflows.
+- Designed and implemented Python-based automation (boto3, REST APIs) to orchestrate serverless workflows across AWS (Lambda, S3, SQS, Transcribe, Bedrock, API Gateway), enabling automated Teams transcript ingestion and AI-driven summarization.
 - Built reusable, idempotent Terraform modules to standardize AWS and Azure infrastructure (networking, compute, IAM, observability), integrating plan/apply validation gates within GitHub-based CI/CD workflows.
+- Architected Terraform state isolation strategy by separating infrastructure into logically scoped state files and repositories (networking, shared services, application stacks) segmented by account and environment, minimizing blast radius and enabling safer, auditable change workflows.
 - Implemented GitHub Actions and ArgoCD GitOps pipelines with branching strategies, pull-request reviews, automated chart validation, and container scanning to ensure safe, versioned infrastructure and application changes.
-- Deployed observability tooling (Prometheus, Grafana, Alloy, CloudWatch dashboards) to implement structured logging, metrics, and alerting for infrastructure and automation workflows.
 - Automated multicloud image builds using Packer + GitHub Actions, producing hardened golden AMIs and Azure images aligned to enterprise security standards.
+- Deployed observability tooling (Prometheus, Grafana, Alloy, CloudWatch dashboards) to implement structured logging, metrics, and alerting for infrastructure and automation workflows.
 - Partnered with security leadership to assess and remediate Security Hub findings, removing public S3 exposure, enforcing least-privilege IAM, and restricting open security groups, improving cloud security posture.
 - Authored runbooks, rollback procedures, and technical documentation to ensure repeatable, auditable infrastructure changes aligned with enterprise governance controls.
 
@@ -71,6 +72,8 @@ Terraform, AWS (EC2, S3, IAM, SSM, CloudWatch, ECS, EKS, Bedrock), Azure (VNet, 
 
 - Designed and delivered a local-first AI application that normalizes resume and LinkedIn data into structured candidate profiles and matches them against live job postings via MCP-based integrations.
 - Implemented explainable, spec-driven ranking pipelines that deterministically score roles across skill overlap, seniority alignment, constraints, and posting freshness, with user-adjustable weighting.
+- Built an AI-assisted search evaluation framework that measures keyword effectiveness across job results, surfaces work arrangement distributions, and enables side-by-side comparison of multiple resume profiles.
+- Designed cost-aware LLM orchestration by dynamically limiting ranking operations based on user-selected scope, preventing excessive API usage while preserving functionality; defaulted to conservative thresholds to protect users from runaway costs.
 
 ---
 
