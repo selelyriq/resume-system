@@ -7,9 +7,9 @@ on:
       - '.github/workflows/build-pdf.yml'
       - '.github/scripts/generate-latex.py'
     branches:
-      - main
-      - automation-devops
-      - ai-infra
+      - platform-engineering
+      - infra-automation
+      - ai-ml-infra
   workflow_dispatch:
 
 permissions:
