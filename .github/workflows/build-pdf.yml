@@ -5,10 +5,10 @@ on:
     paths:
       - 'resume/**/*.md'
       - '.github/workflows/build-pdf.yml'
+      - '.github/scripts/generate-latex.py'
     branches:
       - main
       - automation-devops
-      - security-enterprise
       - ai-infra
   workflow_dispatch:
 
@@ -22,46 +22,55 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Install Pandoc and TeX
+
+      - name: Install TeX packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra cm-super dvipng texlive-lang-english
-      
-      - name: Build PDF from Markdown
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-latex-recommended \
+            cm-super
+
+      - name: Install Python dependencies
+        run: pip install anthropic
+
+      - name: Generate LaTeX via Claude API
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python .github/scripts/generate-latex.py
+
+      - name: Compile PDF
         run: |
-          mkdir -p build
-          pandoc resume/main/resume.md \
-            -f markdown \
-            -t pdf \
-            --template=.github/templates/harvard-resume.tex \
-            -V colorlinks=true \
-            -V linkcolor=blue \
-            --pdf-engine=pdflatex \
-            -o build/AI-Infrastructure-Resume.pdf
-      
+          cd build
+          pdflatex -interaction=nonstopmode resume.tex
+          pdflatex -interaction=nonstopmode resume.tex
+
       - name: Verify PDF created
         run: |
-          if [ -f build/AI-Infrastructure-Resume.pdf ]; then
+          if [ -f build/resume.pdf ]; then
             echo "PDF successfully created"
-            ls -lh build/AI-Infrastructure-Resume.pdf
+            ls -lh build/resume.pdf
           else
             echo "PDF creation failed"
             exit 1
           fi
-      
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
-          path: build/AI-Infrastructure-Resume.pdf
+          path: build/resume.pdf
           retention-days: 30
-      
+
       - name: Commit and push PDF to branch
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          cp build/AI-Infrastructure-Resume.pdf AI-Infrastructure-Resume.pdf
+          cp build/resume.pdf AI-Infrastructure-Resume.pdf
           git add -f AI-Infrastructure-Resume.pdf
           git commit -m "chore: update resume PDF" || echo "No changes to commit"
           git push
+
+# run boi run
