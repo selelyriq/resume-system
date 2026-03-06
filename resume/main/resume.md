@@ -4,7 +4,7 @@ contact: (419) 984-4884 | lyriqsele@gmail.com
 ---
 
 ## Summary
-Cloud Engineer with 5+ years of experience building infrastructure for production AI and cloud-native systems. Deep hands-on expertise in serverless ML orchestration (AWS Lambda, Bedrock, Textract), cost-aware LLM pipeline design, and explainable AI ranking systems. Proven ability to integrate AI services into production workflows and deliver infrastructure that supports scalable, cost-controlled AI workloads.
+Cloud Engineer with 5+ years of experience building infrastructure for production AI and cloud-native systems. Deep hands-on expertise in serverless ML orchestration (AWS Lambda, Bedrock, Transcribe), cost-aware LLM pipeline design, and explainable AI ranking systems. Proven ability to integrate AI services into production workflows and deliver infrastructure that supports scalable, cost-controlled AI workloads.
 
 ---
 
@@ -22,7 +22,7 @@ Cloud Engineer with 5+ years of experience building infrastructure for productio
 AI Systems Engineering, LLM Orchestration, Cost-Aware AI Design, Explainable AI (XAI), Infrastructure as Code, Cloud Architecture, Kubernetes, CI/CD, Observability, Automation, Platform Engineering, Security & Compliance
 
 **Technology Tools & Platforms:**
-AWS (Bedrock, SageMaker, Lambda, Textract, S3, EC2, IAM, SSM, CloudWatch, ECS, EKS), Terraform, Python, OpenAI SDK, MCP, Streamlit, Databricks, Docker, Kubernetes, Helm, ArgoCD, GitHub Actions, Packer, Prometheus, Grafana, Azure (VNet, AKS, Private DNS, Private Link), SQL
+AWS (Bedrock, SageMaker, Lambda, Transcribe, S3, EC2, IAM, SSM, CloudWatch, ECS, EKS), Terraform, Python, OpenAI SDK, MCP, Streamlit, Databricks, Docker, Kubernetes, Helm, ArgoCD, GitHub Actions, Packer, Prometheus, Grafana, Azure (VNet, AKS, Private DNS, Private Link), SQL
 
 ---
 
@@ -38,7 +38,7 @@ AWS (Bedrock, SageMaker, Lambda, Textract, S3, EC2, IAM, SSM, CloudWatch, ECS, E
 ### University of Cincinnati
 **Cloud Engineer** | January 2025 - August 2025 | Cincinnati, OH
 
-- Designed and implemented Python-based automation (boto3, REST APIs) to orchestrate serverless workflows across AWS (Lambda, S3, SQS, Textract, Bedrock, API Gateway), enabling automated Teams transcript ingestion and AI-driven summarization.
+- Designed and implemented Python-based automation (boto3, REST APIs) to orchestrate serverless workflows across AWS (Lambda, S3, SQS, Transcribe, Bedrock, API Gateway), enabling automated Teams transcript ingestion and AI-driven summarization.
 - Built reusable, idempotent Terraform modules to standardize AWS and Azure infrastructure (networking, compute, IAM, observability), integrating plan/apply validation gates within GitHub-based CI/CD workflows.
 - Deployed observability tooling (Prometheus, Grafana, Alloy, CloudWatch dashboards) to implement structured logging, metrics, and alerting for infrastructure and automation workflows.
 - Implemented GitHub Actions and ArgoCD GitOps pipelines with branching strategies, pull-request reviews, automated chart validation, and container scanning to ensure safe, versioned infrastructure and application changes.
