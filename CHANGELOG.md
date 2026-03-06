@@ -1,63 +1,36 @@
 # Changelog
 
-All notable changes to the resume and positioning system are documented here.
+## [v2.0] - 2026-03-06
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [v1.0-platform] - 2026-02-22
+### Changed
+- **Rebuilt branch structure**: Replaced main/automation-devops/security-enterprise/ai-infra with master/platform-engineering/infra-automation/ai-ml-infra
+- **Introduced `master` as internal source of truth**: Generic resume, all positioning docs, all stories — not public-facing
+- **Removed security identity**: Branch deleted, files removed from all branches
+- **Upgraded PDF pipeline**: Replaced Pandoc with Claude API → LaTeX → pdflatex pipeline
+- **Named PDF outputs**: Each identity branch now produces an identity-named PDF instead of a generic filename
+  - `Lyriq-Davis-Platform-Engineering.pdf`
+  - `Lyriq-Davis-Infra-Automation.pdf`
+  - `Lyriq-Davis-AI-ML-Infra.pdf`
 
 ### Added
-- **Initial release**: Canonical "main" resume with platform engineering focus
-- **Core identity definitions**: Platform, Automation, Security, and AI Infrastructure identities
-- **Story library**: 7 anchor stories with YAML frontmatter tagging for cross-positioning
-  - Terraform State Isolation
-  - GitHub Enterprise to SaaS Migration
-  - Internal Developer Platform & Onboarding
-  - $80M/Day Cloud Cutover
-  - Kubernetes & CI/CD Performance
-  - Cost-Aware LLM Orchestration
-  - Failure Lessons & Career Evolution
-- **Technical prep framework**: Deep dives for each positioning (Platform, Automation, Security, AI-Infra)
-- **Common interview questions**: STAR method examples and positioning-aware answer strategies
-- **Positioning rules**: Ethics guardrails ensuring honest positioning without fabrication
-- **Repository structure**: Full Git-based versioning with branch strategy
-- **Pandoc build pipeline**: Automated PDF generation from Markdown source
-- **All 4 Git branches**: main (Platform), automation-devops, security-enterprise, ai-infra
+- **Identity-tailored resumes**: Each branch has fully rewritten resume.md and highlights.md with identity-specific framing, not just reordered bullets
+- **New story**: `serverless-ai-pipeline.md` — UC Bedrock/Transcribe AI orchestration pipeline
+- **Identity lenses on all stories**: Every story now has a **Result by Identity** section covering all three active identities
+- **Prep files scoped per branch**: Each identity branch carries only its own prep file and common-interview-questions.md
 
-### Structure
-```
-resume-system/
-├── resume/main/              # Primary resume (Markdown source-of-truth)
-├── stories/                  # Interview anchor stories with YAML tags
-├── prep/                     # Technical deep-dives per positioning
-├── positioning/              # Identity definitions per branch
-├── .github/workflows/        # Pandoc PDF build pipeline
-├── POSITIONING-RULES.md      # Ethics and integrity guardrails
-├── CHANGELOG.md              # This file
-└── INDEX.md                  # Cross-reference system
-```
+### Removed
+- Security identity positioning and prep files
+- `security-enterprise` branch
+- Generic Pandoc pipeline
 
-### Notes
-- This is the **platform engineering** primary positioning
-- All 4 branches created simultaneously; use incrementally as needed
-- Stories use YAML frontmatter for tagging across identities
-- Technical prep materials include failure modes, tradeoffs, and interview traps
-- No resume duplication across branches—only summary.md and positioning files differ
+---
 
-## Future Versions
+## [v1.0] - 2026-02-22
 
-### v1.1-automation (planned)
-- Branch-specific automation-devops resume with DevOps emphasis
-- GitHub Actions and CI/CD story amplification
-- Additional workshop/demo materials for pipeline patterns
-
-### v2.0-ai-infra (planned)
-- AI Infrastructure-focused resume additions
-- ML systems design stories
-- Model lifecycle and data pipeline deep-dives
-- Cost optimization case studies
-
-### v2.1+ (future)
-- Artifact-based freelance systems positioning
-- Case studies on custom tool development
-- Community creation and thought leadership content
+### Added
+- Initial release with 4 branches: main (platform), automation-devops, security-enterprise, ai-infra
+- 7 anchor stories with YAML frontmatter identity tagging
+- Technical prep deep-dives for each identity
+- Common interview questions with STAR framework
+- Positioning rules and ethics guardrails
+- Pandoc PDF build pipeline
