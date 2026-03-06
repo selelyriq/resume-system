@@ -1,6 +1,6 @@
 ---
 title: "GitHub Enterprise to SaaS Migration"
-identities: [platform, automation]
+identities: [platform-engineering, infra-automation]
 characters: [GE Aerospace]
 tags: [migration, change-management, risk-reduction, coordination]
 ---
@@ -9,37 +9,41 @@ tags: [migration, change-management, risk-reduction, coordination]
 
 ## Context
 
-GE Aerospace operated GitHub Enterprise with 400+ repositories, locally maintained with significant operational overhead. The decision was made to migrate to GitHub.com SaaS to reduce operational burden and gain access to newer features.
+GE Aerospace operated GitHub Enterprise with 400+ repositories, self-hosted with significant operational overhead. The decision was made to migrate to GitHub.com SaaS to reduce that burden and gain access to newer features. At 400+ repos across dozens of application teams, there was no room for a chaotic, ad-hoc migration.
 
 ## Challenge
 
-- **Scale**: Moving 400+ repositories without losing history, losing access, or disrupting workflows
-- **Coordination**: Multiple application teams with different deployment schedules and risk tolerances
-- **Data safety**: Ensuring no repositories were orphaned or accidentally archived
-- **Timeline pressure**: Migration needed to happen within a specific window
+- **Scale**: Moving 400+ repositories without losing history, disrupting CI/CD, or orphaning anything
+- **Coordination**: Multiple application teams with different schedules, risk tolerances, and levels of engagement
+- **Data safety**: No repositories accidentally archived, deprecated, or lost in transit
+- **Timeline**: Migration needed to complete within a defined window — no indefinite runway
 
 ## Action
 
-**Designed staged migration approach**:
+**Designed a staged, risk-ordered migration**:
 - Categorized repositories by criticality and team ownership
-- Built a planning and tracking system to monitor migration progress
+- Built a planning and tracking system to monitor progress and surface blockers
 - Created runbooks for repository moves, deprecations, and archival workflows
-- Coordinated with application owners and repo stakeholders for each move
-- Implemented validation checks post-migration (branch protection, secrets cleanup)
+- Coordinated directly with application owners and stakeholders for every move
+- Implemented post-migration validation checks (branch protection rules, secrets cleanup, workflow re-enablement)
 
-**Executed migration in phases**:
-- Low-risk, non-critical repositories first (validation of process)
-- Medium-risk repositories with team validation
-- High-risk, mission-critical repositories last (with rollback plans)
+**Executed in phases**:
+- Low-risk, non-critical repositories first — used to validate the migration process itself
+- Medium-risk repositories with team sign-off at each step
+- High-risk, mission-critical repositories last, with rollback plans ready
 
-## Result (by positioning)
+## Result
 
-### Platform Engineering Lens
-**Reduced operational complexity at scale**. By implementing a systematic, coordinated approach, we demonstrated that operating 400+ repositories at SaaS scale is more manageable than on-premises. The process itself became reusable for future large-scale repository changes.
+400+ repositories migrated successfully. No history lost, no workflows broken, no teams blocked. The process itself became a reusable template for future large-scale repository operations.
 
-### DevOps/Automation Lens
-**Automated validation and change tracking**. Built tooling to track migration status, validate post-migration state, and automatically update team documentation. Reduced manual coordination overhead.
+## Result by Identity
+
+### Platform Engineering
+**Platform consolidation at scale requires process as much as technical execution.** The tooling mattered less than the coordination model — categorizing by risk, phasing the rollout, and getting team buy-in before moving anything critical. The migration process became a reusable playbook for future platform-level changes affecting multiple teams simultaneously.
+
+### Infra Automation
+**Automated validation and change tracking eliminated manual coordination overhead.** Built tooling to track migration status, validate post-migration state automatically, and surface blockers before they became blockers. The goal was to reduce the per-repo manual effort to near zero for low-risk cases, reserving human attention for the high-risk migrations that actually needed it.
 
 ## Key Takeaway
 
-Large-scale infrastructure changes require careful planning, coordination with stakeholders, and staged rollout. The technical work is secondary to the coordination and risk management.
+Large-scale infrastructure changes are 20% technical and 80% coordination. The technical work is secondary to stakeholder management, risk ordering, and having clear rollback plans before you start.
