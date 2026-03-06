@@ -39,13 +39,13 @@ BULLETS:
 - itemsep=2pt, parsep=0pt, topsep=3pt, leftmargin=1.5em
 
 SECTION HEADERS:
-- Each section header is bold, centered, with a full-width rule immediately below it
+- Each section header is bold and centered — NO horizontal rule, no titlerule, no underline.
 - Use this pattern for every section:
   \\section*{Section Name}
-- Define \\section* with titlesec to be centered bold with a rule below
+- Define \\section* with titlesec to be centered bold only — do NOT add any \\titlerule or rule below it.
 
 EXPERIENCE ENTRY LAYOUT (use this exact pattern for every job):
-\\vspace{12pt}
+\\vspace{18pt}
 \\needspace{8\\baselineskip}
 \\noindent{\\textbf{Company Name}}\\hfill{Dates}\\\\
 {\\textit{Job Title}}\\hfill{Location}\\\\
@@ -53,7 +53,7 @@ EXPERIENCE ENTRY LAYOUT (use this exact pattern for every job):
 \\goodbreak
 
 CRITICAL SPACING RULES:
-- The \\vspace{12pt} creates breathing room ABOVE the company name (between jobs). Good.
+- The \\vspace{18pt} creates two clear lines of breathing room ABOVE the company name (between jobs).
 - After the Location line use \\\\ with NO extra points — just a plain line break, no \\\\[Xpt].
 - The itemize topsep must be 0pt so the first bullet sits tight under the job title line.
 - After \\end{itemize} place \\goodbreak — this signals to LaTeX that breaking the page HERE
@@ -69,9 +69,10 @@ PAGE BREAK RULES:
   at the bottom of a page without at least some of its content following it.
 - \\goodbreak after every \\end{itemize} encourages breaks between jobs, not inside them.
 
-HORIZONTAL RULES between sections:
-- The rule comes from the section header formatting, not from \\hrule or --- in markdown
-- Ignore any --- lines in the markdown; they are not separators in the output
+NO HORIZONTAL RULES:
+- Do NOT use \\titlerule, \\hrule, \\rule, or any horizontal line anywhere in the document.
+- Ignore any --- lines in the markdown source — do not render them as rules.
+- Section headers are plain bold centered text only, with no decorative lines.
 
 Return ONLY the raw LaTeX source. No explanation. No markdown code fences. No triple backticks.
 """
