@@ -1,105 +1,56 @@
-# Resume System
+# Platform Engineering Resume
 
-A Git-based resume system with a generic source of truth on `master` and three identity-tailored public-facing branches. Resume content is compiled into PDFs via a Claude API → LaTeX → pdflatex pipeline running in GitHub Actions.
+This branch contains the **Platform Engineering** identity-tailored resume for Lyriq Davis.
 
-## Branch Structure
+**Core narrative**: "I build the foundation other engineers build on."
 
-| Branch | Identity | Public | PDF Output |
-|---|---|---|---|
-| `master` | Generic (internal only) | No | — |
-| `platform-engineering` | Platform Engineering | Yes | `Lyriq-Davis-Platform-Engineering.pdf` |
-| `infra-automation` | Infrastructure Automation | Yes | `Lyriq-Davis-Infra-Automation.pdf` |
-| `ai-ml-infra` | AI/ML Infrastructure | Yes | `Lyriq-Davis-AI-ML-Infra.pdf` |
-
-## How It Works
-
-1. **`master`** is the internal source of truth. Add new experience here first.
-2. Each identity branch has a tailored `resume.md` and `highlights.md` with framing specific to that positioning.
-3. On every push to an identity branch, GitHub Actions calls the Claude API to generate a `.tex` file from `resume.md`, compiles it with pdflatex, and commits the named PDF back to the branch.
-
-## Repository Structure (master)
+## What's on this branch
 
 ```
-resume-system/
-├── resume/main/
-│   ├── resume.md              # Generic base resume (source of truth)
-│   ├── highlights.md          # Generic key highlights
-│   └── summary.md             # Positioning pitch (varies per branch)
-│
-├── positioning/
-│   ├── platform-identity.md   # Platform Engineering identity & narrative
-│   ├── automation-identity.md # Infrastructure Automation identity & narrative
-│   └── ai-infra-identity.md   # AI/ML Infrastructure identity & narrative
-│
-├── stories/
-│   ├── cloud-cutover.md                  # $80M/day migration
-│   ├── cost-aware-llm.md                 # LLM cost orchestration (Job Scout)
-│   ├── failure-lessons.md                # Career evolution & lessons
-│   ├── github-enterprise-migration.md    # 400+ repo migration
-│   ├── internal-developer-platform.md    # Dev containers platform
-│   ├── kubernetes-deployment.md          # K8s & CI/CD performance
-│   ├── serverless-ai-pipeline.md         # UC Bedrock/Transcribe pipeline
-│   └── terraform-state-isolation.md      # State isolation strategy
-│
-├── .github/
-│   ├── scripts/generate-latex.py  # Calls Claude API, returns .tex from resume.md
-│   └── workflows/build-pdf.yml    # CI: .tex → pdflatex → named PDF → commit
-│
-├── README.md              # This file
-├── INDEX.md               # Cross-reference & navigation guide
-├── CHANGELOG.md           # Version history
-└── POSITIONING-RULES.md   # Ethics guardrails
+resume/main/
+├── resume.md              # Platform Engineering tailored resume
+└── highlights.md          # Platform Engineering key highlights
+
+positioning/
+└── platform-identity.md   # Identity definition, narrative, key stories, interview traps
+
+prep/
+├── platform-deep-dive.md       # Technical prep: state isolation, multi-account, IaC design
+└── common-interview-questions.md
 ```
 
-## Adding New Experience
+## PDF Output
 
-1. Checkout `master`, update `resume/main/resume.md`
-2. Reference `positioning/` to understand how to reframe per identity
-3. Checkout each identity branch and apply the reframed version
-4. Push identity branches to trigger PDF regeneration
+Every push triggers the CI pipeline: Claude API → LaTeX → pdflatex → `Lyriq-Davis-Platform-Engineering.pdf`
 
 ## Interview Prep
 
-Stories live in `stories/` on master. Each story has a **Result by Identity** section — read the lens that matches the role you're interviewing for.
-
-Positioning docs in `positioning/` include the core narrative, key stories, technical refresh notes, and common interview traps for each identity.
-
-## Quick Reference
-
 ```bash
-# Switch to an identity branch
-git checkout platform-engineering
-git checkout infra-automation
-git checkout ai-ml-infra
-git checkout master
+# Read the positioning guide
+cat positioning/platform-identity.md
 
-# Read your resume for the current branch
-cat resume/main/resume.md
+# Read the technical prep
+cat prep/platform-deep-dive.md
 
-# Read the positioning guide for the current branch
-cat positioning/platform-identity.md      # on platform-engineering
-cat positioning/automation-identity.md    # on infra-automation
-cat positioning/ai-infra-identity.md      # on ai-ml-infra
-
-# Read a story with all identity lenses
-cat stories/cloud-cutover.md
+# Read a story with the platform lens
+# (stories live on master — see: git show master:stories/internal-developer-platform.md)
 ```
 
-## PDF Pipeline
+**Priority stories for this identity** (read the Platform Engineering lens in each):
+- `internal-developer-platform.md` — dev containers, onboarding, standardization
+- `terraform-state-isolation.md` — blast radius, parallel team ownership
+- `cloud-cutover.md` — risk-aware execution, operational reliability
+- `github-enterprise-migration.md` — platform consolidation at scale
+- `kubernetes-deployment.md` — deployment platform for application teams
 
-Triggered automatically on push to any identity branch. To test locally:
+## Updating this resume
 
-```bash
-# Requires ANTHROPIC_API_KEY in .env
-python3 .github/scripts/generate-latex.py
-# pdflatex compilation happens in CI only
-```
+New experience goes on `master` first, then gets reframed here with the platform lens.
 
-## Ethics
-
-Positioning is emphasis and framing, not fabrication. See `POSITIONING-RULES.md`.
+See `master` branch `INDEX.md` for the full sync workflow.
 
 ---
 
-**Last updated**: 2026-03-06
-**Active branches**: master, platform-engineering, infra-automation, ai-ml-infra
+**Identity**: Platform Engineering
+**PDF**: `Lyriq-Davis-Platform-Engineering.pdf`
+**Source of truth**: `master` branch
