@@ -1,63 +1,30 @@
-# Changelog
+# Changelog — ai-ml-infra
 
-All notable changes to the resume and positioning system are documented here.
+Branch-specific change history. For full system history, see `master` branch `CHANGELOG.md`.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and versions follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+---
 
-## [v1.0-platform] - 2026-02-22
+## [v2.0] — 2026-03-06
+
+### Changed
+- **Resume tailored for ai-ml-infra identity**: Summary, skills ordering, and bullet emphasis rewritten to lead with AI services (Bedrock, Transcribe, SageMaker), serverless pipelines, and ML infrastructure
+- **highlights.md reordered**: AI/ML impact stories front and center (serverless AI pipeline, cost-aware LLM, ML dev environments)
+- **Branch cleanup**: Removed non-AI-infra positioning files (`platform-identity.md`, `automation-identity.md`) and non-relevant prep files
+- **Stories updated**: All 8 stories rewritten with identity-specific lenses, including new `serverless-ai-pipeline.md` — the primary AI story for this identity
+- **PDF pipeline fixed**: Branch triggers updated from old names (`ai-infra`) to `ai-ml-infra`; output renamed to `Lyriq-Davis-AI-ML-Infra.pdf`
+- **Docs overhauled**: README, INDEX, CHANGELOG, POSITIONING-RULES all updated to reflect current state
+
+### Pipeline
+```
+push to ai-ml-infra → GitHub Actions → Claude API (LaTeX) → pdflatex → Lyriq-Davis-AI-ML-Infra.pdf
+```
+
+---
+
+## [v1.0] — 2026-02-22
 
 ### Added
-- **Initial release**: Canonical "main" resume with platform engineering focus
-- **Core identity definitions**: Platform, Automation, Security, and AI Infrastructure identities
-- **Story library**: 7 anchor stories with YAML frontmatter tagging for cross-positioning
-  - Terraform State Isolation
-  - GitHub Enterprise to SaaS Migration
-  - Internal Developer Platform & Onboarding
-  - $80M/Day Cloud Cutover
-  - Kubernetes & CI/CD Performance
-  - Cost-Aware LLM Orchestration
-  - Failure Lessons & Career Evolution
-- **Technical prep framework**: Deep dives for each positioning (Platform, Automation, Security, AI-Infra)
-- **Common interview questions**: STAR method examples and positioning-aware answer strategies
-- **Positioning rules**: Ethics guardrails ensuring honest positioning without fabrication
-- **Repository structure**: Full Git-based versioning with branch strategy
-- **Pandoc build pipeline**: Automated PDF generation from Markdown source
-- **All 4 Git branches**: main (Platform), automation-devops, security-enterprise, ai-infra
-
-### Structure
-```
-resume-system/
-├── resume/main/              # Primary resume (Markdown source-of-truth)
-├── stories/                  # Interview anchor stories with YAML tags
-├── prep/                     # Technical deep-dives per positioning
-├── positioning/              # Identity definitions per branch
-├── .github/workflows/        # Pandoc PDF build pipeline
-├── POSITIONING-RULES.md      # Ethics and integrity guardrails
-├── CHANGELOG.md              # This file
-└── INDEX.md                  # Cross-reference system
-```
-
-### Notes
-- This is the **platform engineering** primary positioning
-- All 4 branches created simultaneously; use incrementally as needed
-- Stories use YAML frontmatter for tagging across identities
-- Technical prep materials include failure modes, tradeoffs, and interview traps
-- No resume duplication across branches—only summary.md and positioning files differ
-
-## Future Versions
-
-### v1.1-automation (planned)
-- Branch-specific automation-devops resume with DevOps emphasis
-- GitHub Actions and CI/CD story amplification
-- Additional workshop/demo materials for pipeline patterns
-
-### v2.0-ai-infra (planned)
-- AI Infrastructure-focused resume additions
-- ML systems design stories
-- Model lifecycle and data pipeline deep-dives
-- Cost optimization case studies
-
-### v2.1+ (future)
-- Artifact-based freelance systems positioning
-- Case studies on custom tool development
-- Community creation and thought leadership content
+- Initial branch from original `ai-infra` branch
+- AI Infrastructure positioning definition
+- LLM deployment and ML systems technical prep
+- AI-infra-tagged stories from story library
