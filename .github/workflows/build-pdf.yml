@@ -57,10 +57,19 @@ jobs:
             exit 1
           fi
 
+      - name: Set PDF filename
+        run: |
+          case "$GITHUB_REF_NAME" in
+            platform-engineering) echo "PDF_NAME=Lyriq-Davis-Platform-Engineering.pdf" >> $GITHUB_ENV ;;
+            infra-automation)     echo "PDF_NAME=Lyriq-Davis-Infra-Automation.pdf" >> $GITHUB_ENV ;;
+            ai-ml-infra)          echo "PDF_NAME=Lyriq-Davis-AI-ML-Infra.pdf" >> $GITHUB_ENV ;;
+            *)                    echo "PDF_NAME=Lyriq-Davis-Resume.pdf" >> $GITHUB_ENV ;;
+          esac
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf
+          name: ${{ env.PDF_NAME }}
           path: build/resume.pdf
           retention-days: 30
 
@@ -68,8 +77,9 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          cp build/resume.pdf AI-Infrastructure-Resume.pdf
-          git add -f AI-Infrastructure-Resume.pdf
+          git rm -f AI-Infrastructure-Resume.pdf 2>/dev/null || true
+          cp build/resume.pdf "$PDF_NAME"
+          git add -f "$PDF_NAME"
           git commit -m "chore: update resume PDF" || echo "No changes to commit"
           git push
 
