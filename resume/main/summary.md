@@ -1,5 +1,5 @@
 ---
-positioning: platform
+positioning: ai-ml-infra
 branch: main
 ---
 

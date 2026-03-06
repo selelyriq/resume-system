@@ -27,12 +27,12 @@ As AI becomes central to product, the systems that support it—from training en
 
 - **Cost-Aware LLM Orchestration**: Designed and implemented intelligent cost-limiting in Job Scout LLM ranking to prevent runaway API costs while preserving functionality
 - **Explainable AI Pipeline Infrastructure**: Built deterministic ranking pipelines with configurable weighting, enabling transparent, debuggable ML decisions
-- **Serverless ML Orchestration**: Designed AWS Lambda + Textract + Bedrock workflows for automated document processing and ML-driven summarization
+- **Serverless ML Orchestration**: Designed AWS Lambda + Transcribe + Bedrock workflows for automated document processing and ML-driven summarization
 - **Local-First ML Application**: Architected Job Scout to make intelligent use of local vs. cloud inference based on scope and cost constraints
 
 ## Technical Refresh
 
-Services: AWS SageMaker, Bedrock, Textract, Azure ML, model serving (TensorFlow Serving, Triton), vector databases (Pinecone, Weaviate), feature stores (Tecton)
+Services: AWS SageMaker, Bedrock, Transcribe, Azure ML, model serving (TensorFlow Serving, Triton), vector databases (Pinecone, Weaviate), feature stores (Tecton)
 
 Failure modes: Model staleness, training/serving skew, data pipeline failures, cost explosion during inference, unmonitored ML degradation
 
